@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITERA Student Dashboard</title>
+    <!-- Hubungkan dengan CSS Murni -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="header-container">
+            <h1>🎓 ITERA Student Dashboard</h1>
+            <div id="weather-widget">
+                <span>🔄 Memuat cuaca kampus...</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Sidebar / Quick Info & Quote -->
+        <section class="sidebar-section">
+            <div class="card">
+                <h2>📌 Informasi Akademik</h2>
+                <ul class="info-list">
+                    <li><strong>Kampus:</strong> Institut Teknologi Sumatera</li>
+                    <li><strong>Lokasi:</strong> Lampung Selatan</li>
+                    <li><strong>Status:</strong> Aktif (Semester Genap)</li>
+                </ul>
+            </div>
+
+            <!-- Motivational Quote Widget (Async API) -->
+            <div class="card quote-card">
+                <h2>💡 Motivasi Hari Ini</h2>
+                <blockquote id="quote-container">
+                    "Memuat kutipan inspiratif..."
+                </blockquote>
+            </div>
+        </section>
+
+        <!-- Task & Productivity Manager -->
+        <section class="task-section">
+            <div class="card">
+                <h2>📝 Daftar Tugas & Catatan Kuliah</h2>
+
+                <!-- Form Tambah Tugas -->
+                <form id="task-form">
+                    <input 
+                        type="text" 
+                        id="task-input" 
+                        placeholder="Contoh: Selesaikan laporan praktikum..." 
+                        required
+                    >
+                    <select id="task-category">
+                        <option value="Tugas">Tugas</option>
+                        <option value="Praktikum">Praktikum</option>
+                        <option value="Ujian">Ujian</option>
+                        <option value="Pribadi">Pribadi</option>
+                    </select>
+                    <button type="submit" id="submit-btn">Tambah</button>
+                </form>
+
+                <!-- Task List Container -->
+                <div id="task-list">
+                    <!-- Render dinamis via JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Edit Tugas -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <h3>✏️ Edit Tugas</h3>
+            <form id="edit-form">
+                <input type="hidden" id="edit-id">
+                <div class="form-group">
+                    <label for="edit-input">Nama Tugas:</label>
+                    <input type="text" id="edit-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-category">Kategori:</label>
+                    <select id="edit-category">
+                        <option value="Tugas">Tugas</option>
+                        <option value="Praktikum">Praktikum</option>
+                        <option value="Ujian">Ujian</option>
+                        <option value="Pribadi">Pribadi</option>
+                    </select>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" id="cancel-edit" class="btn-secondary">Batal</button>
+                    <button type="submit" class="btn-primary">Simpan Perubahan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 ITERA Personal Dashboard — Dibangun dengan OOP & ES6+
+    </footer>
+
+    <!-- Script JS -->
+    <script src="app.js"></script>
+</body>
+</html>
