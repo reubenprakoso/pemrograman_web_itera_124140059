@@ -72,9 +72,10 @@ penggantinya.
 
 Lampirkan screenshot terminal setelah menjalankan `python main.py` yang
 memperlihatkan penambahan item, katalog, pencarian, dan status peminjaman.
-Simpan tangkapan layar asli di folder `screenshots/` (misalnya
-`screenshots/tugas_perpustakaan.png`) sebelum pengumpulan. Screenshot tidak
-disertakan otomatis karena harus merekam hasil eksekusi aktual di komputer.
+Simpan tangkapan layar asli sebagai `screenshots/tugas_perpustakaan.png`.
+Screenshot harus merekam hasil eksekusi aktual di komputer.
+
+![Screenshot output sistem perpustakaan](screenshots/tugas_perpustakaan.png)
 
 ## Struktur Folder
 
@@ -82,6 +83,8 @@ disertakan otomatis karena harus merekam hasil eksekusi aktual di komputer.
 reubenprakoso_124140059_pertemuan5/
 ├── .gitignore
 ├── README.md
+├── screenshots/
+│   └── tugas_perpustakaan.png
 ├── latihan/
 │   ├── 01_everything_is_object.py
 │   ├── 01_procedural_vs_oop.py
