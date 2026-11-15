@@ -1,0 +1,13 @@
+# Python cache dan bytecode
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+.venv/
+
+# Editor dan sistem operasi
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
