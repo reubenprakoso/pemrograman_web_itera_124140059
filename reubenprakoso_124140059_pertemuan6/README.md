@@ -77,8 +77,17 @@ mata kuliah contoh.
 
 ## Pengujian API
 
-Biarkan server berjalan pada `http://127.0.0.1:6543`. Buka terminal PowerShell
-kedua untuk menjalankan contoh berikut (`curl.exe` menghindari alias PowerShell):
+Biarkan server berjalan pada `http://127.0.0.1:6543`. Untuk menjalankan seluruh
+skenario CRUD dan validasi secara berurutan dari PowerShell, gunakan skrip:
+
+```powershell
+.\test_api.ps1 -Resource mahasiswa
+.\test_api.ps1 -Resource matakuliah
+```
+
+Skrip menampilkan setiap status HTTP dan respons JSON, serta menghapus record
+uji yang dibuatnya. Ambil screenshot output aktual untuk kedua resource.
+Perintah `curl.exe` manual di bawah tetap dapat digunakan untuk pengujian satu per satu.
 
 ### Mahasiswa
 
@@ -133,6 +142,7 @@ reubenprakoso_124140059_pertemuan6/
 ├── requirements.txt
 ├── setup.py
 ├── pytest.ini
+├── test_api.ps1
 ├── screenshots/
 ├── tests/
 │   └── test_api.py
