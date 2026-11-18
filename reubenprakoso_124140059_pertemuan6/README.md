@@ -124,12 +124,16 @@ pytest
 
 ## Screenshot pengujian
 
-Ambil screenshot hasil `curl.exe` untuk endpoint Mahasiswa dan Matakuliah, lalu
-simpan di folder `screenshots/`. Jangan mengunggah screenshot contoh buatan;
-gunakan hasil pengujian aktual dari terminal Anda.
+Screenshot aktual pengujian mencakup daftar, detail, tambah, ubah, hapus,
+serta validasi dan status HTTP. Simpan empat tangkapan layar terminal berikut
+di folder `screenshots/`:
 
-- `screenshots/mahasiswa_api.png`
-- `screenshots/matakuliah_api.png`
+- `screenshots/mahasiswa_api1.png` — daftar, tambah, dan detail mahasiswa.
+- `screenshots/mahasiswa_api2.png` — ubah, validasi, hapus, dan respons 404.
+- `screenshots/matakuliah_api1.png` — daftar, tambah, dan detail matakuliah.
+- `screenshots/matakuliah_api2.png` — ubah, validasi, hapus, dan respons 404.
+
+Gunakan hasil pengujian aktual dari terminal Anda, bukan screenshot contoh.
 
 ## Struktur proyek
 
