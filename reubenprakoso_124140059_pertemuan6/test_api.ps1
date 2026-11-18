@@ -17,13 +17,32 @@ function Invoke-Api {
 
     Write-Host "`n=== $Label ===" -ForegroundColor Cyan
     $curlArgs = @("-sS", "-X", $Method, "-w", "`n__STATUS__%{http_code}")
+    $payloadFile = $null
     if ($null -ne $Body) {
         $jsonBody = $Body | ConvertTo-Json -Compress -Depth 8
-        $curlArgs += @("-H", "Content-Type: application/json", "-d", $jsonBody)
+        $payloadFile = Join-Path $env:TEMP ("pyramid-api-" + [guid]::NewGuid().ToString("N") + ".json")
+        [System.IO.File]::WriteAllText(
+            $payloadFile,
+            $jsonBody,
+            [System.Text.UTF8Encoding]::new($false)
+        )
+        $curlArgs += @(
+            "-H",
+            "Content-Type: application/json",
+            "--data-binary",
+            ("@" + $payloadFile)
+        )
     }
     $curlArgs += "$BaseUrl$Path"
 
-    $rawOutput = (& curl.exe @curlArgs | Out-String).TrimEnd()
+    try {
+        $rawOutput = (& curl.exe @curlArgs | Out-String).TrimEnd()
+    }
+    finally {
+        if ($payloadFile -and (Test-Path $payloadFile)) {
+            Remove-Item $payloadFile -Force
+        }
+    }
     if ($LASTEXITCODE -ne 0) {
         throw "curl.exe gagal untuk $Method $Path. Pastikan server Pyramid berjalan."
     }
