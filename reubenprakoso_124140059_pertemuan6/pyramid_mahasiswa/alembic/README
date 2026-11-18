@@ -1,0 +1,2 @@
+File konfigurasi dan revisi migrasi Alembic berada di direktori ini.
+Jalankan `alembic -c development.ini upgrade head` dari root proyek.

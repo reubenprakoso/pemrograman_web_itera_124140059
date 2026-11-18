@@ -1,0 +1,10 @@
+alembic>=1.13,<2
+psycopg2-binary>=2.9,<3
+pyramid>=2.0,<3
+pyramid-tm>=2.5,<3
+SQLAlchemy>=2.0,<3
+transaction>=4,<6
+waitress>=3,<4
+zope.sqlalchemy>=3,<4
+pytest>=8,<9
+WebTest>=3,<4

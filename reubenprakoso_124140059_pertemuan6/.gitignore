@@ -1,0 +1,25 @@
+# Python bytecode dan cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Virtual environment
+venv/
+.venv/
+
+# Basis data lokal
+*.sqlite
+*.sqlite3
+
+# Editor dan OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Rahasia environment
+.env
